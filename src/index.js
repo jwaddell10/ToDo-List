@@ -52,6 +52,7 @@ const ToDoItemFactory = (title, description, dueDate, priority) => ({
     const b = newProjectDom.newDescription.value;
     const c = newProjectDom.newDueDate.value;
     const d = newProjectDom.newPriorityLevel.value;
+    if (a === '' || b === '') { return; }
     myToDoList.push(a, b, c, d);
   },
 
