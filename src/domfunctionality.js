@@ -7,6 +7,9 @@ const newProjectDom = (() => {
   const addToListBtn = document.querySelector('#addBtn');
   const form = document.querySelector('.form');
   const newToDoItems = document.querySelector('.todoitems');
+  const $form = document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
   return {
     popUpForm,
     newTitle,
@@ -16,8 +19,11 @@ const newProjectDom = (() => {
     addToListBtn,
     form,
     newToDoItems,
+    $form,
   };
 })();
+
+// prevents submit button on form from submitting
 
 // eslint-disable-next-line import/prefer-default-export
 export { newProjectDom };

@@ -15,14 +15,14 @@
     <div class="sidebar">
       <h3>My ToDo List</h3>
       <h4>My Tasks</h4>
-      <button class="add-to-list">Add</button></div>
+      <button class="add-to-list">+</button></div>
     </div>
     <div class="form">
       <div class="form-popup" id="popUpForm">
         <form action="" id="form">
           <div class="todotitle">
             <label for="title">Title:</label>
-            <input type="text" id="title" placeholder="Title" value="" required>
+            <input type="text" id="title" placeholder="Title">
           </div>
           
           <div class="tododescription">
@@ -32,12 +32,13 @@
           
           <div class="tododuedate"> 
             <label for="dueDate">Due Date:</label>
-            <input type="date" id="due-date" value="1999-01-11" required>
+            <input type="date" id="due-date">
           </div>
          
           <div class="todoprioritylevel">
             <label for="priority-level">Priority level?</label> 
             <select name="priority-level" id="priority-level"> 
+            <option label=""></option>
             <option value="high-priority">High Priority</option> 
             <option value="medium-priority">Medium Priority</option> 
             <option value="low-priority">Low Priority</option> 
