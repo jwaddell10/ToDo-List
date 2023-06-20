@@ -4,11 +4,15 @@
 import './style.css';
 import { newProjectDom } from './domfunctionality';
 
+// prevents submit button on form from submitting
+
 const $form = document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();
 });
 
-const myList = [];
+const myToDoList = [];
+console.log(myToDoList);
+// makes popUp form appear
 
 function displayForm() {
   document.querySelector('.form-popup').style.display = 'block';
@@ -19,12 +23,15 @@ newProjectDom.popUpForm.addEventListener('click', () => {
 });
 // function to append values to myList array
 
-function addToList() {
-  console.log(document.querySelector('#title').value);
-  console.log(document.querySelector('#description').value);
-  console.log(newProjectDom.newDueDate.value);
-  console.log(document.querySelector('#priority-level').value);
-}
+/* function addToList() {
+  const a = newProjectDom.newTitle.value;
+  const b = newProjectDom.newDescription.value;
+  const c = newProjectDom.newDueDate.value;
+  const d = newProjectDom.newPriorityLevel.value;
+
+  myToDoList.push(a, b, c, d);
+  console.log(myToDoList);
+} */
 
 function render() {
   newProjectDom.newTitle.value = '';
@@ -33,17 +40,22 @@ function render() {
   newProjectDom.newPriorityLevel.value = '';
 }
 
-newProjectDom.addToListBtn.addEventListener('click', () => {
-  addToList();
-  render();
-});
-const ToDoItem = (title, description, dueDate, priority) => {
-  const testFunction = () => console.log(newProjectDom.newDescription.innerText);
-  return {
-    title, description, dueDate, priority, testFunction,
-  };
-};
 
-const toDo = ToDoItem('title here', 'some description', 'due tomorrow', 'high priority');
-console.log(toDo);
-toDo.testFunction();
+function createToDoItem (title, description, dueDate, priority) 
+const ToDoItemFactory = (title, description, dueDate, priority) => ({
+  title: newProjectDom.newTitle.value,
+  description: newProjectDom.newDescription.value,
+  dueDate: newProjectDom.newDueDate.value,
+  priority: newProjectDom.newPriorityLevel.value,
+
+  addToList() {
+    myToDoList.push(title, description, dueDate, priority);
+  },
+});
+const newItem = ToDoItemFactory(newProjectDom.title.value);
+
+newProjectDom.addToListBtn.addEventListener('click', () => {
+  newItem.addToList();
+  render();
+  console.log(myToDoList);
+});
