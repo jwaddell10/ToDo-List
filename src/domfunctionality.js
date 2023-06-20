@@ -6,6 +6,7 @@ const newProjectDom = (() => {
   const newPriorityLevel = document.querySelector('#priority-level');
   const addToListBtn = document.querySelector('#addBtn');
   const form = document.querySelector('.form');
+  const newToDoItems = document.querySelector('.todoitems');
   return {
     popUpForm,
     newTitle,
@@ -14,6 +15,7 @@ const newProjectDom = (() => {
     newPriorityLevel,
     addToListBtn,
     form,
+    newToDoItems,
   };
 })();
 

@@ -40,22 +40,53 @@ function render() {
   newProjectDom.newPriorityLevel.value = '';
 }
 
-
-function createToDoItem (title, description, dueDate, priority) 
 const ToDoItemFactory = (title, description, dueDate, priority) => ({
-  title: newProjectDom.newTitle.value,
-  description: newProjectDom.newDescription.value,
-  dueDate: newProjectDom.newDueDate.value,
-  priority: newProjectDom.newPriorityLevel.value,
-
+  title,
+  description,
+  dueDate,
+  priority,
   addToList() {
-    myToDoList.push(title, description, dueDate, priority);
+    const a = newProjectDom.newTitle.value;
+    const b = newProjectDom.newDescription.value;
+    const c = newProjectDom.newDueDate.value;
+    const d = newProjectDom.newPriorityLevel.value;
+    myToDoList.push(a, b, c, d);
+  },
+
+  // function to add it to DOM?
+
+  addToDOM() {
+    const myList = newProjectDom.newToDoItems;
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < 1; i++) {
+      const listItem = document.createElement('div');
+      listItem.innerHTML = `${newProjectDom.newTitle.value} ${newProjectDom.newDescription.value} ${newProjectDom.newDueDate.value} ${newProjectDom.newPriorityLevel.value}`;
+      myList.appendChild(listItem);
+    }
   },
 });
-const newItem = ToDoItemFactory(newProjectDom.title.value);
+/* const libraryBook = document.querySelector('#Library-container');
+libraryBook.innerHTML = '';
+
+for (let i = 0; i < myLibrary.length; i++) {
+  const book = myLibrary[i];
+  const bookEl = document.createElement('div');
+  bookEl.innerHTML = `<div class="card-header">
+      <h3 class="title">${book.title}</h3>
+      <h5 class="author">${book.author}</h5>
+      <h5 class="pages">${book.pages}` + ` pages</h5>
+      <h5 class="read">${book.read ? 'Read' : 'Not read yet'}</h5>
+      <button class="remove-Btn" onClick="removeBook(${i})">Remove</button>
+      <button class="toggle-read-btn" onClick="toggleRead(${i})">Read</button>`;
+  libraryBook.appendChild(bookEl);
+}
+} */
 
 newProjectDom.addToListBtn.addEventListener('click', () => {
+  const newItem = ToDoItemFactory();
+
   newItem.addToList();
+  newItem.addToDOM();
   render();
   console.log(myToDoList);
 });
