@@ -4,32 +4,32 @@
 import './style.css';
 import { newProjectDom } from './domfunctionality';
 
-document.querySelector('.todoprioritylevel').selectedIndex = -1;
-
 const myToDoList = [];
 console.log(myToDoList);
 // makes popUp form appear
 
 function displayForm() {
-  document.querySelector('.form-popup').style.display = 'block';
+  document.querySelector('#popUpForm').style.display = 'block';
+}
+
+function cancelForm() {
+  document.querySelector('#popUpForm').style.display = 'none';
 }
 
 newProjectDom.popUpForm.addEventListener('click', () => {
   displayForm();
 });
+
+newProjectDom.cancelBtn.addEventListener('click', () => {
+  cancelForm();
+});
 // function to append values to myList array
 
-/* function addToList() {
-  const a = newProjectDom.newTitle.value;
-  const b = newProjectDom.newDescription.value;
-  const c = newProjectDom.newDueDate.value;
-  const d = newProjectDom.newPriorityLevel.value;
-
-  myToDoList.push(a, b, c, d);
-  console.log(myToDoList);
-} */
-
 function render() {
+  if (`${newProjectDom.newTitle.value}` === '' || `${newProjectDom.newDescription.value}` === '') {
+    // eslint-disable-next-line no-useless-return
+    return;
+  }
   newProjectDom.newTitle.value = '';
   newProjectDom.newDescription.value = '';
   newProjectDom.newDueDate.value = '';
@@ -74,7 +74,8 @@ const ToDoItemFactory = (title, description, dueDate, priority) => ({
   },
 });
 const newItem = ToDoItemFactory();
-console.log(newItem);
+// event listener to create to do items
+
 newProjectDom.addToListBtn.addEventListener('click', () => {
   newItem.addToList();
   newItem.addToDOM();

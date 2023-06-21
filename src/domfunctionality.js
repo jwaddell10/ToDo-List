@@ -7,6 +7,7 @@ const newProjectDom = (() => {
   const addToListBtn = document.querySelector('#addBtn');
   const form = document.querySelector('.form');
   const newToDoItems = document.querySelector('.todoitems');
+  const cancelBtn = document.querySelector('#cancelBtn');
   const $form = document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
   });
@@ -19,6 +20,7 @@ const newProjectDom = (() => {
     addToListBtn,
     form,
     newToDoItems,
+    cancelBtn,
     $form,
   };
 })();
