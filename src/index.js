@@ -3,6 +3,7 @@
 
 import './style.css';
 import { newProjectDom } from './domfunctionality';
+// eslint-disable-next-line no-unused-vars
 
 const myToDoList = [];
 console.log(myToDoList);
