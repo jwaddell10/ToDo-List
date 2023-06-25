@@ -21,20 +21,20 @@ const displayTasks = (() => {
     document.querySelector('#taskitemformpopup').style.display = 'block';
   }
 
-  /* function cancelTasksForm() {
-    document.querySelector('.selecttask').style.display = 'none';
-  } */
+  function cancelTasksForm() {
+    document.querySelector('#taskitemformpopup').style.display = 'none';
+  }
 
   newTaskDom.taskPopUpForm.addEventListener('click', () => {
     displayTasksForm();
   });
 
-  /* newTaskDom.cancelBtn.addEventListener('click', () => {
+  newTaskDom.cancelTaskBtn.addEventListener('click', () => {
     cancelTasksForm();
-  }); */
+  });
   return {
     displayTasksForm,
-    // cancelTasksForm,
+    cancelTasksForm,
     newTaskDom,
   };
 })();

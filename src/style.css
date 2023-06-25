@@ -114,6 +114,14 @@ select {
     right: -10px;
 }
 
+#taskx {
+    position: absolute;
+    background: red;
+    color: white;
+    top: -10px;
+    right: -10px;
+}
+
 #cancelBtn {
     font-size: x-large;
     border-radius: 10px;
@@ -143,4 +151,20 @@ select {
    max-width: 80%;
    padding: 45px;
    box-sizing: border-box;
+}
+
+#kdqoltaskform {
+    display: none;
+}
+
+.phq9title {
+    display: none;
+}
+
+.assessmentstitle {
+    display: none;
+}
+
+.othertitle {
+    display: none;
 }

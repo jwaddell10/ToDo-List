@@ -56,6 +56,8 @@
     </div>
     <div class="taskitemcontainer" id="taskitemformpopup">
       <div class="tasktypebuttons">
+        <button id='taskx'>X</button>
+        
         <div class="kdqolinfo">
           <button class="kdqol">KDQOL</button>
           <form action="" id="kdqoltaskform">
@@ -65,29 +67,32 @@
             </div>
             <div id="kdqolbuttoncontainer">
               <button type='submit' form='form' id='addBtn'>Add</button>
-              <button id='x'>X</button>
             </div>
           </form>
         </div>
+        
         <div class="phq9info">
           <button class="phq9">PHQ9</button>
           <div class="phq9title">
             <label for="title">Patient name/initials:</label><br>
             <input type="text" id="title" placeholder="Patient name/initials">
+            <div id="phq9buttoncontainer">
+              <button type='submit' form='form' id='addBtn'>Add</button>
+            </div>
           </div>
-          <div id="phq9buttoncontainer">
-            <button type='submit' form='form' id='addBtn'>Add</button>
-          </div>
+          
         </div>
+        
         <div class="assessmentsinfo">
           <button class="assessments">Assessments</button>
           <div class="assessmentstitle">
             <label for="title">Patient name/initials:</label><br>
             <input type="text" id="title" placeholder="Patient name/initials">
+            <div id="assessmentbuttoncontainer">
+              <button type='submit' form='form' id='addBtn'>Add</button>
+            </div>
           </div>
-          <div id="assessmentbuttoncontainer">
-            <button type='submit' form='form' id='addBtn'>Add</button>
-          </div>
+          
         </div>
         <div class="otherinfo">
           <button class="other">Other</button>

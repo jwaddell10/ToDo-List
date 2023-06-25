@@ -37,7 +37,7 @@ const newTaskDom = (() => {
   const assessmentsTitle = document.querySelector('.assessmentstitle');
   const otherButton = document.querySelector('.other');
   const selectTaskBtn = document.querySelector('.selecttask');
-  const cancelBtn = document.querySelector('#x');
+  const cancelTaskBtn = document.querySelector('#taskx');
   return {
     taskPopUpForm,
     kdqolButton,
@@ -48,7 +48,7 @@ const newTaskDom = (() => {
     assessmentsTitle,
     otherButton,
     selectTaskBtn,
-    cancelBtn,
+    cancelTaskBtn,
   };
 })();
 
