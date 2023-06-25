@@ -13,9 +13,9 @@
     </div>
     <div class="wrapper">
       <div class="sidebar">
-      <h3><img src="pngwing.com.png" alt="shooting star">Goals</h3>
-      <h4>Tasks</h4>
-      <button class="add-to-list">+</button>
+      <h3><img src="pngwing.com.png" alt="shooting star">Goals<button class="add-to-list">+</button></h3>
+      <h4>Tasks<button class="selecttask">+</button></h4>
+      
     </div>
       <div class="form">
       <h1>All Tasks</h1>
@@ -26,19 +26,15 @@
               <label for="title">Title:</label><br>
               <input type="text" id="title" placeholder="Title">
             </div>
-            
-            <div class="tododuedate"> 
-              <label for="dueDate">Due Date:</label><br>
-              <input type="date" id="due-date">
-            </div>
            
-            <div class="todoprioritylevel">
-              <label for="priority-level">Priority level?</label><br>
-              <select name="priority-level" id="priority-level"> 
+            <div class="goaltimeframe">
+              <label for="goaltimeframe">Short/medium/long term goal?</label><br>
+              <select name="goaltimeframe" id="goaltimeframe"> 
               <option label=""></option>
-              <option value="high-priority">High Priority</option> 
-              <option value="medium-priority">Medium Priority</option> 
-              <option value="low-priority">Low Priority</option> 
+              <option value="short-term">Short term</option> 
+              <option value="medium-term">Medium term</option> 
+              <option value="long-term">Low term
+              </option> 
               </select>
               
             </div>
@@ -48,7 +44,7 @@
             </div>
             <div id="buttoncontainer">
               <button type='submit' form='form' id='addBtn'>Add</button>
-              <button id='cancelBtn'>Cancel</button>
+              <button id='x'>X</button>
             </div>
           </div>
   
@@ -58,7 +54,50 @@
         </div>
       </div>
     </div>
-    <div class="todoitems"></div></div>
+    <div class="taskitemcontainer" id="taskitemformpopup">
+      <div class="tasktypebuttons">
+        <div class="kdqolinfo">
+          <button class="kdqol">KDQOL</button>
+          <form action="" id="kdqoltaskform">
+            <div class="kdqoltitle">
+              <label for="title">Patient name/initials:</label><br>
+              <input type="text" id="title" placeholder="Patient name/initials">
+            </div>
+            <div id="kdqolbuttoncontainer">
+              <button type='submit' form='form' id='addBtn'>Add</button>
+              <button id='x'>X</button>
+            </div>
+          </form>
+        </div>
+        <div class="phq9info">
+          <button class="phq9">PHQ9</button>
+          <div class="phq9title">
+            <label for="title">Patient name/initials:</label><br>
+            <input type="text" id="title" placeholder="Patient name/initials">
+          </div>
+          <div id="phq9buttoncontainer">
+            <button type='submit' form='form' id='addBtn'>Add</button>
+          </div>
+        </div>
+        <div class="assessmentsinfo">
+          <button class="assessments">Assessments</button>
+          <div class="assessmentstitle">
+            <label for="title">Patient name/initials:</label><br>
+            <input type="text" id="title" placeholder="Patient name/initials">
+          </div>
+          <div id="assessmentbuttoncontainer">
+            <button type='submit' form='form' id='addBtn'>Add</button>
+          </div>
+        </div>
+        <div class="otherinfo">
+          <button class="other">Other</button>
+          <div class="otherpopupform">
+
+          </div>
+        </div>
+        
+      </div>
+    </div></div>
     
 	<script src="main.js"></script>
   </body>

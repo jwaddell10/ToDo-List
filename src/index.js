@@ -2,39 +2,31 @@
 /* eslint-disable no-console */
 
 import './style.css';
-import { newProjectDom } from './domfunctionality';
+// eslint-disable-next-line no-unused-vars
+import { newGoalDom, newTaskDom } from './domfunctionality';
+// eslint-disable-next-line import/named
+import { displayGoals } from './goals';
+// eslint-disable-next-line no-unused-vars
+import { displayTasks } from './tasks';
 // eslint-disable-next-line no-unused-vars
 
 const myToDoList = [];
 console.log(myToDoList);
+
 // makes popUp form appear
-
-function displayForm() {
-  document.querySelector('#popUpForm').style.display = 'block';
-}
-
-function cancelForm() {
-  document.querySelector('#popUpForm').style.display = 'none';
-}
-
-newProjectDom.popUpForm.addEventListener('click', () => {
-  displayForm();
-});
-
-newProjectDom.cancelBtn.addEventListener('click', () => {
-  cancelForm();
-});
+displayTasks();
+displayGoals();
 // function to append values to myList array
 
 function render() {
-  if (`${newProjectDom.newTitle.value}` === '' || `${newProjectDom.newDescription.value}` === '') {
+  if (`${newGoalDom.newTitle.value}` === '' || `${newGoalDom.newDescription.value}` === '') {
     // eslint-disable-next-line no-useless-return
     return;
   }
-  newProjectDom.newTitle.value = '';
-  newProjectDom.newDescription.value = '';
-  newProjectDom.newDueDate.value = '';
-  newProjectDom.newPriorityLevel.value = '';
+  newGoalDom.newTitle.value = '';
+  newGoalDom.newDescription.value = '';
+  newGoalDom.newDueDate.value = '';
+  newGoalDom.newPriorityLevel.value = '';
   document.querySelector('.form-popup').style.display = 'none';
 }
 
@@ -49,10 +41,10 @@ const ToDoItemFactory = (title, description, dueDate, priority) => ({
   // function to check if input fields are empty
 
   addToList() {
-    const a = newProjectDom.newTitle.value;
-    const b = newProjectDom.newDescription.value;
-    const c = newProjectDom.newDueDate.value;
-    const d = newProjectDom.newPriorityLevel.value;
+    const a = newGoalDom.newTitle.value;
+    const b = newGoalDom.newDescription.value;
+    const c = newGoalDom.newDueDate.value;
+    const d = newGoalDom.newPriorityLevel.value;
     if (a === '' || b === '') { return; }
     myToDoList.push(a, b, c, d);
   },
@@ -60,13 +52,13 @@ const ToDoItemFactory = (title, description, dueDate, priority) => ({
   // function to add item to DOM
 
   addToDOM() {
-    const myList = newProjectDom.newToDoItems;
+    const myList = newGoalDom.newToDoItems;
 
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 1; i++) {
       const listItem = document.createElement('div');
-      listItem.textContent = `${newProjectDom.newTitle.value} ${newProjectDom.newDescription.value} ${newProjectDom.newDueDate.value} ${newProjectDom.newPriorityLevel.value}`;
-      if (`${newProjectDom.newTitle.value}` === '' || `${newProjectDom.newDescription.value}` === '') {
+      listItem.textContent = `${newGoalDom.newTitle.value} ${newGoalDom.newDescription.value} ${newGoalDom.newDueDate.value} ${newGoalDom.newPriorityLevel.value}`;
+      if (`${newGoalDom.newTitle.value}` === '' || `${newGoalDom.newDescription.value}` === '') {
         // eslint-disable-next-line no-useless-return
         return;
       }
@@ -77,7 +69,7 @@ const ToDoItemFactory = (title, description, dueDate, priority) => ({
 const newItem = ToDoItemFactory();
 // event listener to create to do items
 
-newProjectDom.addToListBtn.addEventListener('click', () => {
+newGoalDom.addToListBtn.addEventListener('click', () => {
   newItem.addToList();
   newItem.addToDOM();
   render();
