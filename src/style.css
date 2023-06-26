@@ -149,19 +149,7 @@ select {
    box-sizing: border-box;
 }
 
-.phq9title {
-    display: none;
-}
-
-.assessmentstitle {
-    display: none;
-}
-
-.othertitle {
-    display: none;
-}
-
-#kdqoltaskformpopup {
+.kdqolitemcontainer {
     -webkit-box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
     box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -176,4 +164,72 @@ select {
     max-width: 80%;
     padding: 45px;
     box-sizing: border-box;
+}
+
+#kdqoltaskformpopup {
+   display: none;
+}
+
+
+.phq9itemcontainer {
+    -webkit-box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+    box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    padding: 45px;
+    box-sizing: border-box;
+}
+
+#phq9taskformpopup {
+    display: none;
+ }
+ 
+ .assessmentitemcontainer {
+    -webkit-box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+    box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    padding: 45px;
+    box-sizing: border-box;
+}
+
+#assessmentformpopup {
+   display: none;
+}
+
+.otheritemcontainer {
+    -webkit-box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+    box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    padding: 45px;
+    box-sizing: border-box;
+}
+
+#othertaskformpopup {
+   display: none;
 }

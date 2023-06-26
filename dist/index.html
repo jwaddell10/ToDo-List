@@ -67,38 +67,55 @@
             </div>
             <div id="kdqolbuttoncontainer">
               <button type='submit' form='form' id='addBtn'>Add</button>
+              <button id='x'>X</button>
             </div>
           </form>
         </div>
         
         <div class="phq9info">
           <button class="phq9">PHQ9</button>
+        <form action="" class="phq9itemcontainer" id="phq9taskformpopup">
           <div class="phq9title">
             <label for="title">Patient name/initials:</label><br>
             <input type="text" id="title" placeholder="Patient name/initials">
             <div id="phq9buttoncontainer">
               <button type='submit' form='form' id='addBtn'>Add</button>
+              <button id='x'>X</button>
             </div>
           </div>
-          
+        </form>
         </div>
         
         <div class="assessmentsinfo">
           <button class="assessments">Assessments</button>
-          <div class="assessmentstitle">
-            <label for="title">Patient name/initials:</label><br>
-            <input type="text" id="title" placeholder="Patient name/initials">
-            <div id="assessmentbuttoncontainer">
-              <button type='submit' form='form' id='addBtn'>Add</button>
-            </div>
+          <form action="" class="assessmentitemcontainer" id="assessmentformpopup">
+            <div class="assessmentstitle">
+              <label for="title">Patient name/initials:</label><br>
+              <input type="text" id="title" placeholder="Patient name/initials">
+              <div id="assessmentbuttoncontainer">
+               <button type='submit' form='form' id='addBtn'>Add</button>
+               <button id='x'>X</button>
+              </div>
+          </form>
           </div>
           
         </div>
         <div class="otherinfo">
           <button class="other">Other</button>
-          <div class="otherpopupform">
-
+        <form action="" class="otheritemcontainer" id="othertaskformpopup">
+          <div class="othertitle">
+            <label for="title">Patient name/initials:</label><br>
+            <input type="text" id="title" placeholder="Patient name/initials">
           </div>
+          <div class="otherdescription">
+            <label for="description">Description:</label><br>
+            <input type="text" id="description" placeholder="Description">
+          </div>
+          <div id="otherbuttoncontainer">
+            <button type='submit' form='form' id='addBtn'>Add</button>
+            <button id='x'>X</button>
+          </div>
+        </form>
         </div>
         
       </div>

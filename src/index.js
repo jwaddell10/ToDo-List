@@ -7,7 +7,9 @@ import { newGoalDom, newTaskDom, newKdqolDom } from './domfunctionality';
 // eslint-disable-next-line import/named
 import { displayGoals } from './goals';
 // eslint-disable-next-line no-unused-vars
-import { displayTasks, displayKdqol } from './tasks';
+import {
+  displayTasks, displayKdqol, displayPhq9, displayAssessment, displayOther,
+} from './tasks';
 // eslint-disable-next-line no-unused-vars
 
 const myToDoList = [];
@@ -15,11 +17,17 @@ console.log(myToDoList);
 
 // makes popUp form appear
 
-displayTasks();
-
 displayGoals();
 
-displayKdqol();
+const taskFunctionality = (() => {
+  displayTasks();
+  displayKdqol();
+  displayPhq9();
+  displayAssessment();
+  displayOther();
+
+  return { taskFunctionality };
+})();
 // function to append values to myList array
 
 function render() {

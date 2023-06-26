@@ -33,8 +33,8 @@ const newTaskDom = (() => {
   const kdqolTitle = document.querySelector('.kdqoltitle');
   const phq9Button = document.querySelector('.phq9');
   const phq9Title = document.querySelector('.phq9title');
-  const assessmentsButton = document.querySelector('.assessments');
-  const assessmentsTitle = document.querySelector('.assessmentstitle');
+  const assessmentButton = document.querySelector('.assessments');
+  const assessmentTitle = document.querySelector('.assessmentstitle');
   const otherButton = document.querySelector('.other');
   const selectTaskBtn = document.querySelector('.selecttask');
   const cancelTaskBtn = document.querySelector('#taskx');
@@ -44,8 +44,8 @@ const newTaskDom = (() => {
     kdqolTitle,
     phq9Button,
     phq9Title,
-    assessmentsButton,
-    assessmentsTitle,
+    assessmentButton,
+    assessmentTitle,
     otherButton,
     selectTaskBtn,
     cancelTaskBtn,
