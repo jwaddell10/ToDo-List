@@ -3,19 +3,23 @@
 
 import './style.css';
 // eslint-disable-next-line no-unused-vars
-import { newGoalDom, newTaskDom } from './domfunctionality';
+import { newGoalDom, newTaskDom, newKdqolDom } from './domfunctionality';
 // eslint-disable-next-line import/named
 import { displayGoals } from './goals';
 // eslint-disable-next-line no-unused-vars
-import { displayTasks } from './tasks';
+import { displayTasks, displayKdqol } from './tasks';
 // eslint-disable-next-line no-unused-vars
 
 const myToDoList = [];
 console.log(myToDoList);
 
 // makes popUp form appear
+
 displayTasks();
+
 displayGoals();
+
+displayKdqol();
 // function to append values to myList array
 
 function render() {
@@ -32,7 +36,7 @@ function render() {
 
 // factory function to create Todo list items
 
-const ToDoItemFactory = (title, description, dueDate, priority) => ({
+const GoalItemFactory = (title, description, dueDate, priority) => ({
   title,
   description,
   dueDate,
@@ -66,7 +70,7 @@ const ToDoItemFactory = (title, description, dueDate, priority) => ({
     }
   },
 });
-const newItem = ToDoItemFactory();
+const newItem = GoalItemFactory();
 // event listener to create to do items
 
 newGoalDom.addToListBtn.addEventListener('click', () => {

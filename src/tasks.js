@@ -39,5 +39,32 @@ const displayTasks = (() => {
   };
 })();
 
+const displayKdqol = (() => {
+  function displayKdqolTasksForm() {
+    document.querySelector('.kdqolitemcontainer').style.display = 'block';
+    document.querySelector('#taskitemformpopup').style.display = 'none';
+  }
+
+  /* function cancelTasksForm() {
+    document.querySelector('#taskitemformpopup').style.display = 'none';
+  } */
+
+  newTaskDom.kdqolButton.addEventListener('click', () => {
+    console.log('is this running?');
+    displayKdqolTasksForm();
+    console.log('is this running?');
+  });
+
+  // newTaskDom.cancelTaskBtn.addEventListener('click', () => {
+  // cancelTasksForm();
+  // });
+
+  return {
+    displayKdqolTasksForm,
+    // cancelTasksForm,
+    newTaskDom,
+  };
+});
+
 // eslint-disable-next-line import/prefer-default-export
-export { displayTasks };
+export { displayTasks, displayKdqol };

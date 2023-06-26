@@ -29,7 +29,7 @@ const newGoalDom = (() => {
 
 const newTaskDom = (() => {
   const taskPopUpForm = document.querySelector('.selecttask');
-  const kdqolButton = document.querySelector('.kdqol');
+  const kdqolButton = document.querySelector('.kdqolbutton');
   const kdqolTitle = document.querySelector('.kdqoltitle');
   const phq9Button = document.querySelector('.phq9');
   const phq9Title = document.querySelector('.phq9title');
@@ -51,6 +51,14 @@ const newTaskDom = (() => {
     cancelTaskBtn,
   };
 })();
+
+/* const newKdqolDom = (() => {
+  const kdqolButton = document.querySelector('.kdqol');
+
+  return {
+    kdqolButton,
+  };
+})(); */
 
 // eslint-disable-next-line import/prefer-default-export
 export { newGoalDom, newTaskDom };
