@@ -4,7 +4,7 @@
 import './style.css';
 // eslint-disable-next-line no-unused-vars
 import { newGoalDom, newTaskDom } from './domfunctionality';
-// eslint-disable-next-line import/named
+// eslint-disable-next-line import/named, no-unused-vars
 import { displayGoals } from './goals';
 // eslint-disable-next-line no-unused-vars
 import {
@@ -16,19 +16,14 @@ const myGoalToDoList = [];
 console.log(myGoalToDoList);
 
 // function to display goal popup form
-displayGoals();
 
 // functions that control task functions
 
-const taskFunctionality = (() => {
-  displayTasks();
-  displayKdqol();
-  displayPhq9();
-  displayAssessment();
-  displayOther();
-
-  return { taskFunctionality };
-})();
+displayTasks();
+displayKdqol();
+displayPhq9();
+displayAssessment();
+displayOther();
 
 function render() {
   if (`${newGoalDom.newTitle.value}` === '' || `${newGoalDom.newDescription.value}` === '') {
@@ -75,6 +70,10 @@ const GoalItemFactory = (title, description, priority) => ({
 });
 const newItem = GoalItemFactory();
 // event listener to create to do items
+const thisItem = document.querySelector('#goalAddBtn');
+thisItem.addEventListener('click', () => {
+  console.log('is this running?');
+});
 
 newGoalDom.goalAddToListBtn.addEventListener('click', () => {
   console.log('is this running?');

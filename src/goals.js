@@ -1,8 +1,6 @@
 import './style.css';
 import { newGoalDom } from './domfunctionality';
 
-const testFunction = () => { console.log('this is a test'); };
-
 const displayGoals = (() => {
   function displayGoalsForm() {
     document.querySelector('#popUpForm').style.display = 'block';
@@ -26,4 +24,5 @@ const displayGoals = (() => {
   };
 })();
 
-export { displayGoals, testFunction };
+// eslint-disable-next-line import/prefer-default-export
+export { displayGoals };

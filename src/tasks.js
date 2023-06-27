@@ -24,7 +24,7 @@ const displayTasks = (() => {
     cancelTasksForm,
     newTaskDom,
   };
-})();
+});
 
 const displayKdqol = (() => {
   function displayKdqolTasksForm() {
@@ -48,7 +48,7 @@ const displayKdqol = (() => {
     cancelTasksForm,
     newTaskDom,
   };
-})();
+});
 
 const displayPhq9 = (() => {
   function displayPhq9TasksForm() {
@@ -73,7 +73,7 @@ const displayPhq9 = (() => {
     cancelTasksForm,
     newTaskDom,
   };
-})();
+});
 
 const displayAssessment = (() => {
   function displayAssessmentTasksForm() {
@@ -98,7 +98,7 @@ const displayAssessment = (() => {
     cancelTasksForm,
     newTaskDom,
   };
-})();
+});
 
 const displayOther = (() => {
   function displayOtherTasksForm() {
@@ -123,7 +123,7 @@ const displayOther = (() => {
     cancelTasksForm,
     newTaskDom,
   };
-})();
+});
 
 // eslint-disable-next-line import/prefer-default-export
 export {
