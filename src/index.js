@@ -3,7 +3,7 @@
 
 import './style.css';
 // eslint-disable-next-line no-unused-vars
-import { newGoalDom, newTaskDom, newKdqolDom } from './domfunctionality';
+import { newGoalDom, newTaskDom } from './domfunctionality';
 // eslint-disable-next-line import/named
 import { displayGoals } from './goals';
 // eslint-disable-next-line no-unused-vars
@@ -12,12 +12,13 @@ import {
 } from './tasks';
 // eslint-disable-next-line no-unused-vars
 
-const myToDoList = [];
-console.log(myToDoList);
+const myGoalToDoList = [];
+console.log(myGoalToDoList);
 
-// makes popUp form appear
-
+// function to display goal popup form
 displayGoals();
+
+// functions that control task functions
 
 const taskFunctionality = (() => {
   displayTasks();
@@ -28,7 +29,6 @@ const taskFunctionality = (() => {
 
   return { taskFunctionality };
 })();
-// function to append values to myList array
 
 function render() {
   if (`${newGoalDom.newTitle.value}` === '' || `${newGoalDom.newDescription.value}` === '') {
@@ -37,28 +37,23 @@ function render() {
   }
   newGoalDom.newTitle.value = '';
   newGoalDom.newDescription.value = '';
-  newGoalDom.newDueDate.value = '';
-  newGoalDom.newPriorityLevel.value = '';
+  newGoalDom.newGoalTimeFrame.value = '';
   document.querySelector('.form-popup').style.display = 'none';
 }
 
-// factory function to create Todo list items
+// factory function to create Todo Goal list items
 
-const GoalItemFactory = (title, description, dueDate, priority) => ({
+const GoalItemFactory = (title, description, priority) => ({
   title,
   description,
-  dueDate,
   priority,
-
-  // function to check if input fields are empty
 
   addToList() {
     const a = newGoalDom.newTitle.value;
     const b = newGoalDom.newDescription.value;
-    const c = newGoalDom.newDueDate.value;
-    const d = newGoalDom.newPriorityLevel.value;
+    const c = newGoalDom.newGoalTimeFrame.value;
     if (a === '' || b === '') { return; }
-    myToDoList.push(a, b, c, d);
+    myGoalToDoList.push(a, b, c);
   },
 
   // function to add item to DOM
@@ -69,7 +64,7 @@ const GoalItemFactory = (title, description, dueDate, priority) => ({
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 1; i++) {
       const listItem = document.createElement('div');
-      listItem.textContent = `${newGoalDom.newTitle.value} ${newGoalDom.newDescription.value} ${newGoalDom.newDueDate.value} ${newGoalDom.newPriorityLevel.value}`;
+      listItem.textContent = `${newGoalDom.newTitle.value} ${newGoalDom.newDescription.value} ${newGoalDom.newGoalTimeFrame.value}`;
       if (`${newGoalDom.newTitle.value}` === '' || `${newGoalDom.newDescription.value}` === '') {
         // eslint-disable-next-line no-useless-return
         return;
@@ -81,11 +76,12 @@ const GoalItemFactory = (title, description, dueDate, priority) => ({
 const newItem = GoalItemFactory();
 // event listener to create to do items
 
-newGoalDom.addToListBtn.addEventListener('click', () => {
+newGoalDom.goalAddToListBtn.addEventListener('click', () => {
+  console.log('is this running?');
   newItem.addToList();
   newItem.addToDOM();
   render();
   console.log(newItem);
 
-  console.log(myToDoList);
+  console.log(myGoalToDoList);
 });

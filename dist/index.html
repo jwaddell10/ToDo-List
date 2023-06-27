@@ -17,14 +17,15 @@
       <h4>Tasks<button class="selecttask">+</button></h4>
       
     </div>
-      <div class="form">
+      <div class="goalform">
       <h1>All Tasks</h1>
+      <button class="thisbutton">thisbutton</button>
       <div class="form-popup" id="popUpForm">
-        <form action="" id="form">
+        <form action="" id="goalform">
           <div class="popuptext">
             <div class="todotitle">
               <label for="title">Title:</label><br>
-              <input type="text" id="title" placeholder="Title">
+              <input type="text" id="goaltitle" placeholder="Title">
             </div>
            
             <div class="goaltimeframe">
@@ -43,7 +44,7 @@
               <input type="text" id="description" placeholder="Description">
             </div>
             <div id="buttoncontainer">
-              <button type='submit' form='form' id='addBtn'>Add</button>
+              <button id='goalAddBtn'>Add</button>
               <button id='x'>X</button>
             </div>
           </div>
@@ -63,10 +64,10 @@
           <form action="" class="kdqolitemcontainer" id="kdqoltaskformpopup">
             <div class="kdqoltitle">
               <label for="title">Patient name/initials:</label><br>
-              <input type="text" id="title" placeholder="Patient name/initials">
+              <input type="text" id="kdqoltitle" placeholder="Patient name/initials">
             </div>
             <div id="kdqolbuttoncontainer">
-              <button type='submit' form='form' id='addBtn'>Add</button>
+              <button type='submit' form='form' id='kdqoladdBtn'>Add</button>
               <button id='x'>X</button>
             </div>
           </form>
@@ -77,9 +78,9 @@
         <form action="" class="phq9itemcontainer" id="phq9taskformpopup">
           <div class="phq9title">
             <label for="title">Patient name/initials:</label><br>
-            <input type="text" id="title" placeholder="Patient name/initials">
+            <input type="text" id="phq9title" placeholder="Patient name/initials">
             <div id="phq9buttoncontainer">
-              <button type='submit' form='form' id='addBtn'>Add</button>
+              <button type='submit' form='form' id='phq9addBtn'>Add</button>
               <button id='x'>X</button>
             </div>
           </div>
@@ -91,9 +92,9 @@
           <form action="" class="assessmentitemcontainer" id="assessmentformpopup">
             <div class="assessmentstitle">
               <label for="title">Patient name/initials:</label><br>
-              <input type="text" id="title" placeholder="Patient name/initials">
+              <input type="text" id="assessmenttitle" placeholder="Patient name/initials">
               <div id="assessmentbuttoncontainer">
-               <button type='submit' form='form' id='addBtn'>Add</button>
+               <button type='submit' form='form' id='assessmentaddBtn'>Add</button>
                <button id='x'>X</button>
               </div>
           </form>
@@ -105,14 +106,14 @@
         <form action="" class="otheritemcontainer" id="othertaskformpopup">
           <div class="othertitle">
             <label for="title">Patient name/initials:</label><br>
-            <input type="text" id="title" placeholder="Patient name/initials">
+            <input type="text" id="othertitle" placeholder="Patient name/initials">
           </div>
           <div class="otherdescription">
             <label for="description">Description:</label><br>
             <input type="text" id="description" placeholder="Description">
           </div>
           <div id="otherbuttoncontainer">
-            <button type='submit' form='form' id='addBtn'>Add</button>
+            <button type='submit' form='form' id='otheraddBtn'>Add</button>
             <button id='x'>X</button>
           </div>
         </form>
