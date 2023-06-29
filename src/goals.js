@@ -24,5 +24,15 @@ const displayGoals = (() => {
   };
 })();
 
+/* const addGoal = (() => {
+  function addGoalToList() {
+    console.log(newGoalDom.newTitle.value);
+  }
+
+  newGoalDom.goalAddToListBtn.addEventListener('click', () => {
+    addGoalToList();
+  });
+})(); */
+
 // eslint-disable-next-line import/prefer-default-export
 export { displayGoals };

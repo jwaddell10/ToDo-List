@@ -5,7 +5,7 @@ import './style.css';
 // eslint-disable-next-line no-unused-vars
 import { newGoalDom, newTaskDom } from './domfunctionality';
 // eslint-disable-next-line import/named, no-unused-vars
-import { displayGoals } from './goals';
+import { displayGoals, addGoal } from './goals';
 // eslint-disable-next-line no-unused-vars
 import {
   displayTasks, displayKdqol, displayPhq9, displayAssessment, displayOther,
@@ -18,7 +18,6 @@ console.log(myGoalToDoList);
 // function to display goal popup form
 
 // functions that control task functions
-fdsfd
 displayTasks();
 displayKdqol();
 displayPhq9();
@@ -38,10 +37,10 @@ function render() {
 
 // factory function to create Todo Goal list items
 
-const GoalItemFactory = (title, description, priority) => ({
+const GoalItemFactory = (title, description, timeFrame) => ({
   title,
   description,
-  priority,
+  timeFrame,
 
   addToList() {
     const a = newGoalDom.newTitle.value;
@@ -59,6 +58,7 @@ const GoalItemFactory = (title, description, priority) => ({
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 1; i++) {
       const listItem = document.createElement('div');
+      listItem.classList.add('goalitems');
       listItem.textContent = `${newGoalDom.newTitle.value} ${newGoalDom.newDescription.value} ${newGoalDom.newGoalTimeFrame.value}`;
       if (`${newGoalDom.newTitle.value}` === '' || `${newGoalDom.newDescription.value}` === '') {
         // eslint-disable-next-line no-useless-return
@@ -70,10 +70,6 @@ const GoalItemFactory = (title, description, priority) => ({
 });
 const newItem = GoalItemFactory();
 // event listener to create to do items
-const thisItem = document.querySelector('#goalAddBtn');
-thisItem.addEventListener('click', () => {
-  console.log('is this running?');
-});
 
 newGoalDom.goalAddToListBtn.addEventListener('click', () => {
   console.log('is this running?');

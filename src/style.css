@@ -132,6 +132,10 @@ select {
     width: 8rem;
 }
 
+.taskitemcontainer {
+    display: none;
+}
+
 #taskitemformpopup {
     -webkit-box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
    box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
@@ -232,4 +236,8 @@ select {
 
 #othertaskformpopup {
    display: none;
+}
+
+.goalitems {
+    color: white;
 }

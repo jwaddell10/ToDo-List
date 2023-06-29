@@ -6,7 +6,7 @@ const newGoalDom = (() => {
   const newGoalTimeFrame = document.querySelector('#goaltimeframe');
   const goalAddToListBtn = document.querySelector('#goalAddBtn');
   const form = document.querySelector('.goalform');
-  const newToDoItems = document.querySelector('.todoitems');
+  const newToDoItems = document.querySelector('.goalform');
   const cancelBtn = document.querySelector('#x');
   const selectTaskBtn = document.querySelector('.selecttask');
   const $form = document.querySelector('.form-popup').addEventListener('submit', (e) => {
