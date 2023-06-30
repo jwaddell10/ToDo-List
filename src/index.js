@@ -3,9 +3,13 @@
 
 import './style.css';
 // eslint-disable-next-line no-unused-vars
+import { select } from 'neo-async';
 import { newGoalDom, newTaskDom } from './domfunctionality';
 // eslint-disable-next-line import/named, no-unused-vars
-import { displayGoals, addGoal } from './goals';
+import {
+  // eslint-disable-next-line no-unused-vars, import/named
+  displayGoals, addGoal, moreGoalInfo, changeToGoalForm,
+} from './goals';
 // eslint-disable-next-line no-unused-vars
 import {
   displayTasks, displayKdqol, displayPhq9, displayAssessment, displayOther,
@@ -59,7 +63,7 @@ const GoalItemFactory = (title, description, timeFrame) => ({
     for (let i = 0; i < 1; i++) {
       const listItem = document.createElement('div');
       listItem.classList.add('goalitems');
-      listItem.textContent = `${newGoalDom.newTitle.value} ${newGoalDom.newDescription.value} ${newGoalDom.newGoalTimeFrame.value}`;
+      listItem.textContent = `${newGoalDom.newTitle.value}`;
       if (`${newGoalDom.newTitle.value}` === '' || `${newGoalDom.newDescription.value}` === '') {
         // eslint-disable-next-line no-useless-return
         return;
@@ -80,3 +84,18 @@ newGoalDom.goalAddToListBtn.addEventListener('click', () => {
 
   console.log(myGoalToDoList);
 });
+
+function selectForm() {
+  newGoalDom.goalHeader.addEventListener('click', () => {
+    // make goalThing popup
+    newGoalDom.newToDoItems.style.display = 'block';
+    newTaskDom.taskItemContainer.style.display = 'none';
+  });
+
+  newTaskDom.taskHeader.addEventListener('click', () => {
+    newTaskDom.taskItemContainer.style.display = 'block';
+    newGoalDom.newToDoItems.style.display = 'none';
+  });
+}
+
+selectForm();

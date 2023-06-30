@@ -24,6 +24,20 @@ const displayGoals = (() => {
   };
 })();
 
+/* const moreGoalInfo = (() => {
+  function displayMoreGoalInfo() {
+    const goalForm = document.createElement('div');
+    goalForm.classList.add('.moreGoalFormInfo');
+  }
+
+  newGoalDom.goalItems.addEventListener('click', () => {
+    displayMoreGoalInfo();
+  });
+  return { moreGoalInfo };
+})(); */
+
+
+
 /* const addGoal = (() => {
   function addGoalToList() {
     console.log(newGoalDom.newTitle.value);

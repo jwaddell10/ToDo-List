@@ -9,6 +9,8 @@ const newGoalDom = (() => {
   const newToDoItems = document.querySelector('.goalform');
   const cancelBtn = document.querySelector('#x');
   const selectTaskBtn = document.querySelector('.selecttask');
+  const goalItems = document.querySelector('.goalitems');
+  const goalHeader = document.querySelector('.goals');
   const $form = document.querySelector('.form-popup').addEventListener('submit', (e) => {
     e.preventDefault();
   });
@@ -23,12 +25,16 @@ const newGoalDom = (() => {
     newToDoItems,
     cancelBtn,
     selectTaskBtn,
+    goalItems,
+    goalHeader,
     $form,
   };
 })();
 
 const newTaskDom = (() => {
   const taskPopUpForm = document.querySelector('.selecttask');
+  const taskItemContainer = document.querySelector('.taskitemswrapper');
+  const taskHeader = document.querySelector('.tasks');
   const kdqolButton = document.querySelector('.kdqolbutton');
   const kdqolTitle = document.querySelector('.kdqoltitle');
   const kdqolAddBtn = document.querySelector('#kdqoladdBtn');
@@ -45,6 +51,8 @@ const newTaskDom = (() => {
   const cancelTaskBtn = document.querySelector('#taskx');
   return {
     taskPopUpForm,
+    taskItemContainer,
+    taskHeader,
     kdqolButton,
     kdqolTitle,
     kdqolAddBtn,

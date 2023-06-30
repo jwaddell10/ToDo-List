@@ -11,13 +11,18 @@
     <div class="title">
       <h1>ToDo List</h1>
     </div>
-    <div class="wrapper">
-      <div class="sidebar">
-      <h3><img src="pngwing.com.png" alt="shooting star">Goals<button class="add-to-list">+</button></h3>
-      <h4>Tasks<button class="selecttask">+</button></h4>
-      
-    </div>
-      <div class="goalform">
+    <div class="formcontainer">
+      <div class="wrapper">
+        <div class="sidebar">
+        <h3 class="goals"><img src="pngwing.com.png" alt="shooting star">Goals<button class="add-to-list">+</button></h3>
+        <h3 class="tasks">Tasks<button class="selecttask">+</button></h4>
+        
+      </div>
+      <div class="goalandtaskform">
+        <div class="goalform">
+          <h1 class="allgoalsheader">All Goals</h1>
+        </div>
+      </div>
       <div class="form-popup" id="popUpForm">
         <form action="" id="goalform">
           <div class="popuptext">
@@ -52,6 +57,9 @@
         </form>
         </div>
       </div>
+    </div>
+    <div class="taskitemswrapper" id ="taskitemwrapperformpopup">
+      <h1 class="alltasksheader">All Tasks</h1>
     </div>
     <div class="taskitemcontainer" id="taskitemformpopup">
       <div class="tasktypebuttons">
@@ -116,9 +124,11 @@
           </div>
         </form>
         </div>
-        
       </div>
-    </div></div>
+    </div>
+  
+      
+   
     
 	<script src="main.js"></script>
   </body>
