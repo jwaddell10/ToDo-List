@@ -55,8 +55,8 @@ const displayPhq9 = (() => {
     document.querySelector('.phq9itemcontainer').style.display = 'block';
   }
 
-  function cancelTasksForm() {
-    document.querySelector('#taskitemformpopup').style.display = 'none';
+  function cancelPhq9TasksForm() {
+    document.querySelector('#phq9taskformpopup').style.display = 'none';
   }
 
   newTaskDom.phq9Button.addEventListener('click', () => {
@@ -64,13 +64,13 @@ const displayPhq9 = (() => {
     displayPhq9TasksForm();
   });
 
-  newTaskDom.cancelTaskBtn.addEventListener('click', () => {
-    cancelTasksForm();
+  newTaskDom.cancelPhq9Btn.addEventListener('click', () => {
+    cancelPhq9TasksForm();
   });
 
   return {
     displayPhq9TasksForm,
-    cancelTasksForm,
+    cancelPhq9TasksForm,
     newTaskDom,
   };
 });

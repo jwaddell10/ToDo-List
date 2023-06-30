@@ -36,11 +36,13 @@ const newTaskDom = (() => {
   const taskItemContainer = document.querySelector('.taskitemswrapper');
   const taskHeader = document.querySelector('.tasks');
   const kdqolButton = document.querySelector('.kdqolbutton');
-  const kdqolTitle = document.querySelector('.kdqoltitle');
+  const kdqolTitle = document.querySelector('#kdqoltitle');
+  const kdqolDueDate = document.querySelector('#kdqolduedate');
   const kdqolAddBtn = document.querySelector('#kdqoladdBtn');
   const phq9Button = document.querySelector('.phq9');
-  const phq9Title = document.querySelector('.phq9title');
-  const phq9AddBtn = document.querySelector('#kdqoladdBtn');
+  const phq9Title = document.querySelector('#phq9title');
+  const phq9AddBtn = document.querySelector('#phq9addBtn');
+  const phq9DueDate = document.querySelector('#phq9duedate');
 
   const assessmentButton = document.querySelector('.assessments');
   const assessmentTitle = document.querySelector('.assessmentstitle');
@@ -49,16 +51,22 @@ const newTaskDom = (() => {
   const otherAddBtn = document.querySelector('#kdqoladdBtn');
   const selectTaskBtn = document.querySelector('.selecttask');
   const cancelTaskBtn = document.querySelector('#taskx');
+  const cancelPhq9Btn = document.querySelector('#phq9x');
+  const newTaskItems = document.querySelector('.taskitemswrapper');
+  const $phq9form = document.querySelector('#phq9taskformpopup').addEventListener('submit', (e) => {
+    e.preventDefault();
   return {
     taskPopUpForm,
     taskItemContainer,
     taskHeader,
     kdqolButton,
     kdqolTitle,
+    kdqolDueDate,
     kdqolAddBtn,
     phq9Button,
     phq9Title,
     phq9AddBtn,
+    phq9DueDate,
     assessmentButton,
     assessmentTitle,
     assessmentAddBtn,
@@ -66,6 +74,9 @@ const newTaskDom = (() => {
     otherAddBtn,
     selectTaskBtn,
     cancelTaskBtn,
+    cancelPhq9Btn,
+    newTaskItems,
+    $phq9form,
   };
 })();
 

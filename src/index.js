@@ -17,6 +17,8 @@ import {
 // eslint-disable-next-line no-unused-vars
 
 const myGoalToDoList = [];
+const myKdqolList = [];
+const myPhq9List = [];
 console.log(myGoalToDoList);
 
 // function to display goal popup form
@@ -83,6 +85,72 @@ newGoalDom.goalAddToListBtn.addEventListener('click', () => {
   console.log(newItem);
 
   console.log(myGoalToDoList);
+});
+
+const KDQOLFactory = (name, dueDate) => ({
+  name,
+  dueDate,
+
+  addToKdqolList() {
+    const a = newTaskDom.kdqolTitle.value;
+    const b = newTaskDom.kdqolDueDate.value;
+    myKdqolList.push(a, b);
+    console.log(myKdqolList);
+  },
+
+  addKdqolToDOM() {
+    const kdqolList = newTaskDom.newTaskItems;
+
+    const kdqolItem = document.createElement('div');
+    kdqolItem.classList.add('kdqolitems');
+    kdqolItem.textContent = `${newTaskDom.kdqolTitle.value}`;
+    if (`${newTaskDom.kdqolTitle.value}` === '') {
+      // eslint-disable-next-line no-useless-return
+      return;
+    }
+    kdqolList.appendChild(kdqolItem);
+  },
+});
+
+const newKdqol = KDQOLFactory();
+
+newTaskDom.kdqolAddBtn.addEventListener('click', () => {
+  newKdqol.addToKdqolList();
+  newKdqol.addKdqolToDOM();
+  console.log('is this running?');
+});
+
+const PHQ9Factory = (name, dueDate) => ({
+  name,
+  dueDate,
+
+  addToPhq9List() {
+    const a = newTaskDom.phq9Title.value;
+    const b = newTaskDom.phq9DueDate.value;
+    myPhq9List.push(a, b);
+    console.log(myPhq9List);
+  },
+
+  addPhq9ToDOM() {
+    const phq9List = newTaskDom.newTaskItems;
+
+    const phq9item = document.createElement('div');
+    phq9item.classList.add('phq9items');
+    phq9item.textContent = `${newTaskDom.phq9Title.value}`;
+    if (`${newTaskDom.phq9Title.value}` === '') {
+      // eslint-disable-next-line no-useless-return
+      return;
+    }
+    phq9List.appendChild(phq9item);
+  },
+});
+
+const newPhq9 = PHQ9Factory();
+
+newTaskDom.phq9AddBtn.addEventListener('click', () => {
+  newPhq9.addToPhq9List();
+  newPhq9.addPhq9ToDOM();
+  console.log('is this running?');
 });
 
 function selectForm() {

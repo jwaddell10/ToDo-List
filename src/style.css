@@ -114,6 +114,38 @@ select {
     right: -10px;
 }
 
+#kdqolx {
+    position: absolute;
+    background: red;
+    color: white;
+    top: -10px;
+    right: -10px;
+}
+
+#phq9x {
+    position: absolute;
+    background: red;
+    color: white;
+    top: -10px;
+    right: -10px;
+}
+
+#assessmentx {
+    position: absolute;
+    background: red;
+    color: white;
+    top: -10px;
+    right: -10px;
+}
+
+#otherx {
+    position: absolute;
+    background: red;
+    color: white;
+    top: -10px;
+    right: -10px;
+}
+
 #taskx {
     position: absolute;
     background: red;
@@ -254,7 +286,8 @@ select {
     color: white;
 }
 
-.goalandtaskform {
+.goalandtaskformparent {
+    background-color: green;
   position: relative;
   left: 0vw;
   top: 0vh;
@@ -263,6 +296,7 @@ select {
 }
 
 .goalform {
+    background-color: red;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -270,11 +304,10 @@ select {
 }
 
 .taskitemswrapper {
+    background-color: blue;
     display: none;
     color: white;
     height: 100%;
     width: 100%;
     position: absolute;
-    left: 200px;
-    top: 130px;
-  }
+}

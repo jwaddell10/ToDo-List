@@ -18,10 +18,10 @@
         <h3 class="tasks">Tasks<button class="selecttask">+</button></h4>
         
       </div>
-      <div class="goalandtaskform">
-        <div class="goalform">
-          <h1 class="allgoalsheader">All Goals</h1>
-        </div>
+  <div class="goalandtaskformparent">
+    <div class="goalandtaskform">
+      <div class="goalform">
+        <h1 class="allgoalsheader">All Goals</h1>
       </div>
       <div class="form-popup" id="popUpForm">
         <form action="" id="goalform">
@@ -51,30 +51,30 @@
               <button id='x'>X</button>
             </div>
           </div>
-  
-    
           
         </form>
         </div>
       </div>
+      <div class="taskitemswrapper" id ="taskitemwrapperformpopup">
+        <h1 class="alltasksheader">All Tasks</h1>
+      </div>
     </div>
-    <div class="taskitemswrapper" id ="taskitemwrapperformpopup">
-      <h1 class="alltasksheader">All Tasks</h1>
-    </div>
-    <div class="taskitemcontainer" id="taskitemformpopup">
-      <div class="tasktypebuttons">
+      <div class="taskitemcontainer" id="taskitemformpopup">
+        <div class="tasktypebuttons">
         <button id='taskx'>X</button>
         
         <div class="kdqolinfo">
           <button class="kdqolbutton">KDQOL</button>
           <form action="" class="kdqolitemcontainer" id="kdqoltaskformpopup">
             <div class="kdqoltitle">
-              <label for="title">Patient name/initials:</label><br>
-              <input type="text" id="kdqoltitle" placeholder="Patient name/initials">
+              <label for="patientname">Patient name/initials:</label><br>
+              <input type="text" id="kdqoltitle" name="patientname" placeholder="Patient name/initials">
+              <label for="date">Due date:</label>
+              <input type="date" id="kdqolduedate">
             </div>
             <div id="kdqolbuttoncontainer">
               <button type='submit' form='form' id='kdqoladdBtn'>Add</button>
-              <button id='x'>X</button>
+              <button id='kdqolx'>X</button>
             </div>
           </form>
         </div>
@@ -83,11 +83,13 @@
           <button class="phq9">PHQ9</button>
         <form action="" class="phq9itemcontainer" id="phq9taskformpopup">
           <div class="phq9title">
-            <label for="title">Patient name/initials:</label><br>
+            <label for="patientname">Patient name/initials:</label><br>
             <input type="text" id="phq9title" placeholder="Patient name/initials">
+            <label for="date">Due date:</label>
+            <input type="date" id="phq9duedate">
             <div id="phq9buttoncontainer">
               <button type='submit' form='form' id='phq9addBtn'>Add</button>
-              <button id='x'>X</button>
+              <button id='phq9x'>X</button>
             </div>
           </div>
         </form>
@@ -97,11 +99,13 @@
           <button class="assessments">Assessments</button>
           <form action="" class="assessmentitemcontainer" id="assessmentformpopup">
             <div class="assessmentstitle">
-              <label for="title">Patient name/initials:</label><br>
+              <label for="patientname">Patient name/initials:</label><br>
               <input type="text" id="assessmenttitle" placeholder="Patient name/initials">
+              <label for="date">Due date:</label>
+              <input type="date" id="assessmentduedate">
               <div id="assessmentbuttoncontainer">
                <button type='submit' form='form' id='assessmentaddBtn'>Add</button>
-               <button id='x'>X</button>
+               <button id='assessmentx'>X</button>
               </div>
           </form>
           </div>
@@ -111,8 +115,10 @@
           <button class="other">Other</button>
         <form action="" class="otheritemcontainer" id="othertaskformpopup">
           <div class="othertitle">
-            <label for="title">Patient name/initials:</label><br>
+            <label for="patientname">Patient name/initials:</label><br>
             <input type="text" id="othertitle" placeholder="Patient name/initials">
+            <label for="date">Due date:</label>
+            <input type="date" id="otherduedate">
           </div>
           <div class="otherdescription">
             <label for="description">Description:</label><br>
@@ -120,12 +126,14 @@
           </div>
           <div id="otherbuttoncontainer">
             <button type='submit' form='form' id='otheraddBtn'>Add</button>
-            <button id='x'>X</button>
+            <button id='otherx'>X</button>
           </div>
         </form>
         </div>
       </div>
     </div>
+  </div>
+    
   
       
    
