@@ -19,6 +19,8 @@ import {
 const myGoalToDoList = [];
 const myKdqolList = [];
 const myPhq9List = [];
+const myAssessmentList = [];
+const myOtherList = [];
 console.log(myGoalToDoList);
 
 // function to display goal popup form
@@ -150,6 +152,75 @@ const newPhq9 = PHQ9Factory();
 newTaskDom.phq9AddBtn.addEventListener('click', () => {
   newPhq9.addToPhq9List();
   newPhq9.addPhq9ToDOM();
+  console.log('is this running?');
+});
+
+const assessmentFactory = (name, dueDate) => ({
+  name,
+  dueDate,
+
+  addToAssessmentList() {
+    const a = newTaskDom.assessmentTitle.value;
+    const b = newTaskDom.assessmentDueDate.value;
+    myAssessmentList.push(a, b);
+    console.log(myAssessmentList);
+  },
+
+  addAssessmentToDOM() {
+    const assessmentList = newTaskDom.newTaskItems;
+
+    const assessmentItem = document.createElement('div');
+    assessmentItem.classList.add('assessmentitems');
+    assessmentItem.textContent = `${newTaskDom.assessmentTitle.value}`;
+    if (`${newTaskDom.assessmentTitle.value}` === '') {
+      // eslint-disable-next-line no-useless-return
+      return;
+    }
+    assessmentList.appendChild(assessmentItem);
+  },
+});
+
+const newAssessment = assessmentFactory();
+
+newTaskDom.assessmentAddBtn.addEventListener('click', () => {
+  newAssessment.addToAssessmentList();
+  newAssessment.addAssessmentToDOM();
+  console.log('is this running?');
+});
+
+const OtherFactory = (name, dueDate, description) => ({
+  name,
+  dueDate,
+  description,
+
+  addToOtherList() {
+    const a = newTaskDom.otherTitle.value;
+    const b = newTaskDom.otherDueDate.value;
+    const c = newTaskDom.otherDescription.value;
+
+    myOtherList.push(a, b, c);
+    console.log(myOtherList);
+  },
+
+  addOtherToDOM() {
+    const otherList = newTaskDom.newTaskItems;
+
+    const otherItem = document.createElement('div');
+    otherItem.classList.add('phq9items');
+    otherItem.textContent = `${newTaskDom.otherTitle.value}`;
+    if (`${newTaskDom.otherTitle.value}` === '' || `${newTaskDom.otherDescription.value}` === '') {
+      // eslint-disable-next-line no-useless-return
+      return;
+    }
+    otherList.appendChild(otherItem);
+  },
+});
+
+const newOther = OtherFactory();
+
+newTaskDom.otherAddBtn.addEventListener('click', () => {
+  newOther.addToOtherList();
+  newOther.addOtherToDOM();
   console.log('is this running?');
 });
 

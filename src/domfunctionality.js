@@ -45,10 +45,17 @@ const newTaskDom = (() => {
   const phq9DueDate = document.querySelector('#phq9duedate');
 
   const assessmentButton = document.querySelector('.assessments');
-  const assessmentTitle = document.querySelector('.assessmentstitle');
-  const assessmentAddBtn = document.querySelector('#kdqoladdBtn');
+  const assessmentTitle = document.querySelector('#assessmenttitle');
+  const assessmentDueDate = document.querySelector('#assessmentduedate');
+
+  const assessmentAddBtn = document.querySelector('#assessmentaddBtn');
   const otherButton = document.querySelector('.other');
-  const otherAddBtn = document.querySelector('#kdqoladdBtn');
+  const otherTitle = document.querySelector('#othertitle');
+  const otherDueDate = document.querySelector('#otherduedate');
+
+  const otherDescription = document.querySelector('#otherdescription');
+
+  const otherAddBtn = document.querySelector('#otheraddBtn');
   const selectTaskBtn = document.querySelector('.selecttask');
   const cancelTaskBtn = document.querySelector('#taskx');
   const cancelKdqolBtn = document.querySelector('#kdqolx');
@@ -83,8 +90,12 @@ const newTaskDom = (() => {
     phq9DueDate,
     assessmentButton,
     assessmentTitle,
+    assessmentDueDate,
     assessmentAddBtn,
     otherButton,
+    otherTitle,
+    otherDueDate,
+    otherDescription,
     otherAddBtn,
     selectTaskBtn,
     cancelTaskBtn,
