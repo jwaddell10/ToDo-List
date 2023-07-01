@@ -51,10 +51,24 @@ const newTaskDom = (() => {
   const otherAddBtn = document.querySelector('#kdqoladdBtn');
   const selectTaskBtn = document.querySelector('.selecttask');
   const cancelTaskBtn = document.querySelector('#taskx');
+  const cancelKdqolBtn = document.querySelector('#kdqolx');
   const cancelPhq9Btn = document.querySelector('#phq9x');
+  const cancelAssessmentBtn = document.querySelector('#assessmentx');
+  const cancelOtherBtn = document.querySelector('#otherx');
+
   const newTaskItems = document.querySelector('.taskitemswrapper');
   const $phq9form = document.querySelector('#phq9taskformpopup').addEventListener('submit', (e) => {
     e.preventDefault();
+  });
+  const $kdqolform = document.querySelector('#kdqoltaskformpopup').addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
+  const $assessmentform = document.querySelector('#assessmentformpopup').addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
+  const $otherform = document.querySelector('#othertaskformpopup').addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
   return {
     taskPopUpForm,
     taskItemContainer,
@@ -74,9 +88,15 @@ const newTaskDom = (() => {
     otherAddBtn,
     selectTaskBtn,
     cancelTaskBtn,
+    cancelKdqolBtn,
     cancelPhq9Btn,
+    cancelAssessmentBtn,
+    cancelOtherBtn,
     newTaskItems,
     $phq9form,
+    $kdqolform,
+    $assessmentform,
+    $otherform,
   };
 })();
 

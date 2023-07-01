@@ -31,21 +31,21 @@ const displayKdqol = (() => {
     document.querySelector('.kdqolitemcontainer').style.display = 'block';
   }
 
-  function cancelTasksForm() {
-    document.querySelector('#taskitemformpopup').style.display = 'none';
+  function cancelKdqolForm() {
+    document.querySelector('#kdqoltaskformpopup').style.display = 'none';
   }
 
   newTaskDom.kdqolButton.addEventListener('click', () => {
     displayKdqolTasksForm();
   });
 
-  newTaskDom.cancelTaskBtn.addEventListener('click', () => {
-    cancelTasksForm();
+  newTaskDom.cancelKdqolBtn.addEventListener('click', () => {
+    cancelKdqolForm();
   });
 
   return {
     displayKdqolTasksForm,
-    cancelTasksForm,
+    cancelKdqolForm,
     newTaskDom,
   };
 });
@@ -80,8 +80,8 @@ const displayAssessment = (() => {
     document.querySelector('.assessmentitemcontainer').style.display = 'block';
   }
 
-  function cancelTasksForm() {
-    document.querySelector('#taskitemformpopup').style.display = 'none';
+  function cancelAssessmentForm() {
+    document.querySelector('#assessmentformpopup').style.display = 'none';
   }
 
   newTaskDom.assessmentButton.addEventListener('click', () => {
@@ -89,13 +89,13 @@ const displayAssessment = (() => {
     displayAssessmentTasksForm();
   });
 
-  newTaskDom.cancelTaskBtn.addEventListener('click', () => {
-    cancelTasksForm();
+  newTaskDom.cancelAssessmentBtn.addEventListener('click', () => {
+    cancelAssessmentForm();
   });
 
   return {
     displayAssessmentTasksForm,
-    cancelTasksForm,
+    cancelAssessmentForm,
     newTaskDom,
   };
 });
@@ -105,8 +105,8 @@ const displayOther = (() => {
     document.querySelector('.otheritemcontainer').style.display = 'block';
   }
 
-  function cancelTasksForm() {
-    document.querySelector('#taskitemformpopup').style.display = 'none';
+  function cancelOtherForm() {
+    document.querySelector('#othertaskformpopup').style.display = 'none';
   }
 
   newTaskDom.otherButton.addEventListener('click', () => {
@@ -114,13 +114,13 @@ const displayOther = (() => {
     displayOtherTasksForm();
   });
 
-  newTaskDom.cancelTaskBtn.addEventListener('click', () => {
-    cancelTasksForm();
+  newTaskDom.cancelOtherBtn.addEventListener('click', () => {
+    cancelOtherForm();
   });
 
   return {
     displayOtherTasksForm,
-    cancelTasksForm,
+    cancelOtherForm,
     newTaskDom,
   };
 });

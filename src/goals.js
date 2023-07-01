@@ -36,8 +36,6 @@ const displayGoals = (() => {
   return { moreGoalInfo };
 })(); */
 
-
-
 /* const addGoal = (() => {
   function addGoalToList() {
     console.log(newGoalDom.newTitle.value);
