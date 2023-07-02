@@ -125,7 +125,17 @@ const displayOther = (() => {
   };
 });
 
+const completeTaskItems = (() => {
+  function completeKdqolItems() {
+    newTaskDom.kdqolItems.addEventListener('click', () => {
+      console.log('does my kdqol button work');
+      newTaskDom.kdqolItems.style = 'text-decoration: line-through;';
+    });
+  }
+  return { completeKdqolItems };
+});
+
 // eslint-disable-next-line import/prefer-default-export
 export {
-  displayTasks, displayKdqol, displayPhq9, displayAssessment, displayOther,
+  displayTasks, displayKdqol, displayPhq9, displayAssessment, displayOther, completeTaskItems,
 };

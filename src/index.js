@@ -12,7 +12,8 @@ import {
 } from './goals';
 // eslint-disable-next-line no-unused-vars
 import {
-  displayTasks, displayKdqol, displayPhq9, displayAssessment, displayOther,
+  // eslint-disable-next-line no-unused-vars
+  displayTasks, displayKdqol, displayPhq9, displayAssessment, displayOther, completeTaskItems,
 } from './tasks';
 // eslint-disable-next-line no-unused-vars
 
@@ -22,7 +23,6 @@ const myPhq9List = [];
 const myAssessmentList = [];
 const myOtherList = [];
 console.log(myGoalToDoList);
-
 // function to display goal popup form
 
 // functions that control task functions
@@ -101,9 +101,9 @@ const KDQOLFactory = (name, dueDate) => ({
   },
 
   addKdqolToDOM() {
-    const kdqolList = newTaskDom.newTaskItems;
+    const kdqolList = newTaskDom.newKdqolItems;
 
-    const kdqolItem = document.createElement('div');
+    const kdqolItem = document.createElement('li');
     kdqolItem.classList.add('kdqolitems');
     kdqolItem.textContent = `${newTaskDom.kdqolTitle.value}`;
     if (`${newTaskDom.kdqolTitle.value}` === '') {
@@ -134,9 +134,9 @@ const PHQ9Factory = (name, dueDate) => ({
   },
 
   addPhq9ToDOM() {
-    const phq9List = newTaskDom.newTaskItems;
+    const phq9List = newTaskDom.newPhq9Items;
 
-    const phq9item = document.createElement('div');
+    const phq9item = document.createElement('li');
     phq9item.classList.add('phq9items');
     phq9item.textContent = `${newTaskDom.phq9Title.value}`;
     if (`${newTaskDom.phq9Title.value}` === '') {
@@ -167,9 +167,9 @@ const assessmentFactory = (name, dueDate) => ({
   },
 
   addAssessmentToDOM() {
-    const assessmentList = newTaskDom.newTaskItems;
+    const assessmentList = newTaskDom.newAssessmentItems;
 
-    const assessmentItem = document.createElement('div');
+    const assessmentItem = document.createElement('li');
     assessmentItem.classList.add('assessmentitems');
     assessmentItem.textContent = `${newTaskDom.assessmentTitle.value}`;
     if (`${newTaskDom.assessmentTitle.value}` === '') {
@@ -203,10 +203,10 @@ const OtherFactory = (name, dueDate, description) => ({
   },
 
   addOtherToDOM() {
-    const otherList = newTaskDom.newTaskItems;
+    const otherList = newTaskDom.newOtherItems;
 
-    const otherItem = document.createElement('div');
-    otherItem.classList.add('phq9items');
+    const otherItem = document.createElement('li');
+    otherItem.classList.add('otheritems');
     otherItem.textContent = `${newTaskDom.otherTitle.value}`;
     if (`${newTaskDom.otherTitle.value}` === '' || `${newTaskDom.otherDescription.value}` === '') {
       // eslint-disable-next-line no-useless-return

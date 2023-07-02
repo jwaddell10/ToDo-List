@@ -64,6 +64,14 @@ const newTaskDom = (() => {
   const cancelOtherBtn = document.querySelector('#otherx');
 
   const newTaskItems = document.querySelector('.taskitemswrapper');
+  const newKdqolItems = document.querySelector('.kdqolheader');
+  const newPhq9Items = document.querySelector('.phq9header');
+  const newAssessmentItems = document.querySelector('.assessmentheader');
+  const newOtherItems = document.querySelector('.otherheader');
+  const kdqolItems = document.querySelectorAll('li');
+  const phq9Items = document.querySelector('.phq9items');
+  const assessmentItems = document.querySelector('.assessmentitems');
+  const otherItems = document.querySelector('.otheritems');
   const $phq9form = document.querySelector('#phq9taskformpopup').addEventListener('submit', (e) => {
     e.preventDefault();
   });
@@ -104,6 +112,14 @@ const newTaskDom = (() => {
     cancelAssessmentBtn,
     cancelOtherBtn,
     newTaskItems,
+    newKdqolItems,
+    newPhq9Items,
+    newAssessmentItems,
+    newOtherItems,
+    kdqolItems,
+    phq9Items,
+    assessmentItems,
+    otherItems,
     $phq9form,
     $kdqolform,
     $assessmentform,

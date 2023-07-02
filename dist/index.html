@@ -21,7 +21,7 @@
   <div class="goalandtaskformparent">
     <div class="goalandtaskform">
       <div class="goalform">
-        <h1 class="allgoalsheader">All Goals</h1>
+        <h1 class="allgoalsheader">Goals</h1>
       </div>
       <div class="form-popup" id="popUpForm">
         <form action="" id="goalform">
@@ -56,7 +56,13 @@
         </div>
       </div>
       <div class="taskitemswrapper" id ="taskitemwrapperformpopup">
-        <h1 class="alltasksheader">All Tasks</h1>
+        <h1 class="alltasksheader">Tasks</h1>
+        <div class="taskheaders">
+          <h3 class="kdqolheader">KDQOL</h3>
+          <h3 class="phq9header">Phq9</h3>
+          <h3 class="assessmentheader">Assessment</h3>
+          <h3 class="otherheader">Other</h3>
+        </div>
       </div>
     </div>
       <div class="taskitemcontainer" id="taskitemformpopup">
@@ -116,13 +122,13 @@
         <form action="" class="otheritemcontainer" id="othertaskformpopup">
           <div class="othertitle">
             <label for="patientname">Patient name/initials:</label><br>
-            <input type="text" id="othertitle" placeholder="Patient name/initials">
+            <input type="text" id="othertitle" placeholder="Patient name/initials" required>
             <label for="date">Due date:</label>
             <input type="date" id="otherduedate">
           </div>
           <div class="otherdescription">
             <label for="description">Description:</label><br>
-            <input type="text" id="otherdescription" placeholder="Description">
+            <input type="text" id="otherdescription" placeholder="Description" required>
           </div>
           <div id="otherbuttoncontainer">
             <button type='submit' form='form' id='otheraddBtn'>Add</button>

@@ -287,7 +287,6 @@ select {
 }
 
 .goalandtaskformparent {
-    background-color: green;
   position: relative;
   left: 0vw;
   top: 0vh;
@@ -296,7 +295,6 @@ select {
 }
 
 .goalform {
-    background-color: red;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -304,10 +302,31 @@ select {
 }
 
 .taskitemswrapper {
-    background-color: blue;
+    display: grid;
+    grid-template-columns: repeat(1fr, 4);
     display: none;
     color: white;
     height: 100%;
     width: 100%;
     position: absolute;
 }
+
+.taskheaders {
+    display: flex;
+    justify-content: space-around;
+}
+
+.alltasksheader {
+    display: flex;
+    justify-content: center;
+}
+
+.allgoalsheader {
+    display: flex;
+    justify-content: center;
+}
+
+li:hover {
+    background-color: lightblue;
+    cursor: pointer;
+  }
