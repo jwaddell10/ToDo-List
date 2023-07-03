@@ -24,6 +24,7 @@ const myAssessmentList = [];
 const myOtherList = [];
 console.log(myGoalToDoList);
 // function to display goal popup form
+// eslint-disable-next-line no-plusplus
 
 // functions that control task functions
 displayTasks();
@@ -31,6 +32,8 @@ displayKdqol();
 displayPhq9();
 displayAssessment();
 displayOther();
+
+// rerenders Goal form to be blank after using
 
 function render() {
   if (`${newGoalDom.newTitle.value}` === '' || `${newGoalDom.newDescription.value}` === '') {
@@ -77,7 +80,7 @@ const GoalItemFactory = (title, description, timeFrame) => ({
   },
 });
 const newItem = GoalItemFactory();
-// event listener to create to do items
+// event listener to create to do goal items
 
 newGoalDom.goalAddToListBtn.addEventListener('click', () => {
   console.log('is this running?');
@@ -88,6 +91,8 @@ newGoalDom.goalAddToListBtn.addEventListener('click', () => {
 
   console.log(myGoalToDoList);
 });
+
+// creates Kdqol tasks
 
 const KDQOLFactory = (name, dueDate) => ({
   name,
@@ -122,6 +127,8 @@ newTaskDom.kdqolAddBtn.addEventListener('click', () => {
   console.log('is this running?');
 });
 
+// creates phq9 tasks
+
 const PHQ9Factory = (name, dueDate) => ({
   name,
   dueDate,
@@ -155,6 +162,8 @@ newTaskDom.phq9AddBtn.addEventListener('click', () => {
   console.log('is this running?');
 });
 
+// creates assessment tasks
+
 const assessmentFactory = (name, dueDate) => ({
   name,
   dueDate,
@@ -187,6 +196,8 @@ newTaskDom.assessmentAddBtn.addEventListener('click', () => {
   newAssessment.addAssessmentToDOM();
   console.log('is this running?');
 });
+
+// creates other tasks
 
 const OtherFactory = (name, dueDate, description) => ({
   name,
@@ -224,6 +235,8 @@ newTaskDom.otherAddBtn.addEventListener('click', () => {
   console.log('is this running?');
 });
 
+// displays goal or task forms on click
+
 function selectForm() {
   newGoalDom.goalHeader.addEventListener('click', () => {
     // make goalThing popup
@@ -238,3 +251,12 @@ function selectForm() {
 }
 
 selectForm();
+
+let newKdqolList;
+
+function deleteTask(item) {
+  newKdqolList = myKdqolList.filter((e) => e !== item);
+  console.log(newKdqolList);
+}
+
+deleteTask();
