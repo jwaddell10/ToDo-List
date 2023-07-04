@@ -13,7 +13,7 @@ import {
 // eslint-disable-next-line no-unused-vars
 import {
   // eslint-disable-next-line no-unused-vars
-  displayTasks, displayKdqol, displayPhq9, displayAssessment, displayOther, completeTaskItems,
+  displayTasks, displayKdqol, displayPhq9, displayAssessment, displayOther,
 } from './tasks';
 // eslint-disable-next-line no-unused-vars
 
