@@ -18,13 +18,20 @@ import {
 // eslint-disable-next-line no-unused-vars
 
 const myGoalToDoList = [];
-const myKdqolList = [];
+const myKdqolList = ['task here'];
 const myPhq9List = [];
 const myAssessmentList = [];
 const myOtherList = [];
 console.log(myGoalToDoList);
 // function to display goal popup form
 // eslint-disable-next-line no-plusplus
+
+const removeTask = (e) => {
+  delete myPhq9List[e];
+  console.log(myPhq9List);
+};
+
+removeTask();
 
 // functions that control task functions
 displayTasks();
@@ -151,6 +158,11 @@ const PHQ9Factory = (name, dueDate) => ({
       return;
     }
     phq9List.appendChild(phq9item);
+    phq9item.addEventListener('click', (e) => {
+      removeTask(e.target.value);
+      phq9item.remove();
+      console.log(myPhq9List);
+    });
   },
 });
 

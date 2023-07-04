@@ -68,7 +68,7 @@ const newTaskDom = (() => {
   const newPhq9Items = document.querySelector('.phq9header');
   const newAssessmentItems = document.querySelector('.assessmentheader');
   const newOtherItems = document.querySelector('.otherheader');
-  const kdqolItems = document.querySelectorAll('.kdqolitems');
+  const kdqolItems = document.querySelector('.kdqolitems');
   const phq9Items = document.querySelector('.phq9items');
   const assessmentItems = document.querySelector('.assessmentitems');
   const otherItems = document.querySelector('.otheritems');
