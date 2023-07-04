@@ -18,7 +18,7 @@ import {
 // eslint-disable-next-line no-unused-vars
 
 const myGoalToDoList = [];
-const myKdqolList = ['task here'];
+const myKdqolList = [];
 const myPhq9List = [];
 const myAssessmentList = [];
 const myOtherList = [];
@@ -26,12 +26,25 @@ console.log(myGoalToDoList);
 // function to display goal popup form
 // eslint-disable-next-line no-plusplus
 
-const removeTask = (e) => {
+const removeKdqolTask = (e) => {
+  delete myKdqolList[e];
+  console.log(myKdqolList);
+};
+
+const removePhq9Task = (e) => {
   delete myPhq9List[e];
   console.log(myPhq9List);
 };
 
-removeTask();
+const removeAssessmentTask = (e) => {
+  delete myAssessmentList[e];
+  console.log(myAssessmentList);
+};
+
+const removeOtherTask = (e) => {
+  delete myOtherList[e];
+  console.log(myOtherList);
+};
 
 // functions that control task functions
 displayTasks();
@@ -123,6 +136,11 @@ const KDQOLFactory = (name, dueDate) => ({
       return;
     }
     kdqolList.appendChild(kdqolItem);
+    kdqolItem.addEventListener('click', (e) => {
+      removeKdqolTask(e.target.value);
+      kdqolItem.remove();
+      console.log(myKdqolList);
+    });
   },
 });
 
@@ -159,7 +177,7 @@ const PHQ9Factory = (name, dueDate) => ({
     }
     phq9List.appendChild(phq9item);
     phq9item.addEventListener('click', (e) => {
-      removeTask(e.target.value);
+      removePhq9Task(e.target.value);
       phq9item.remove();
       console.log(myPhq9List);
     });
@@ -189,7 +207,6 @@ const assessmentFactory = (name, dueDate) => ({
 
   addAssessmentToDOM() {
     const assessmentList = newTaskDom.newAssessmentItems;
-
     const assessmentItem = document.createElement('li');
     assessmentItem.classList.add('assessmentitems');
     assessmentItem.textContent = `${newTaskDom.assessmentTitle.value}`;
@@ -198,6 +215,11 @@ const assessmentFactory = (name, dueDate) => ({
       return;
     }
     assessmentList.appendChild(assessmentItem);
+    assessmentItem.addEventListener('click', (e) => {
+      removeAssessmentTask(e.target.value);
+      assessmentItem.remove();
+      console.log(myAssessmentList);
+    });
   },
 });
 
@@ -236,6 +258,11 @@ const OtherFactory = (name, dueDate, description) => ({
       return;
     }
     otherList.appendChild(otherItem);
+    otherItem.addEventListener('click', (e) => {
+      removeOtherTask(e.target.value);
+      otherItem.remove();
+      console.log(myOtherList);
+    });
   },
 });
 
