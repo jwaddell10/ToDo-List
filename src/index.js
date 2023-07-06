@@ -3,7 +3,6 @@
 
 import './style.css';
 // eslint-disable-next-line no-unused-vars
-import { select } from 'neo-async';
 import { newGoalDom, newTaskDom } from './domfunctionality';
 // eslint-disable-next-line import/named, no-unused-vars
 import {
@@ -26,26 +25,19 @@ console.log(myGoalToDoList);
 // function to display goal popup form
 // eslint-disable-next-line no-plusplus
 
-const removeKdqolTask = (e) => {
-  delete myKdqolList[e];
+/* const removeKdqolTask = (e) => {
+  delete myKdqolList;
+  console.log(e);
+  // const item = e.currentTarget;
   console.log(myKdqolList);
-};
-
-const removePhq9Task = (e) => {
-  delete myPhq9List[e];
-  console.log(myPhq9List);
-};
-
-const removeAssessmentTask = (e) => {
-  delete myAssessmentList[e];
-  console.log(myAssessmentList);
-};
-
-const removeOtherTask = (e) => {
-  delete myOtherList[e];
-  console.log(myOtherList);
-};
-
+  // item.remove();
+  // const itemIndex = myKdqolList.indexOf(userInput);
+  // myKdqolList.splice(itemIndex, 1);
+  // console.log(myKdqolList);
+//  console.log('the remove item thing works');
+  // delete myKdqolList[e];
+  // console.log(myKdqolList);
+}; */
 // functions that control task functions
 displayTasks();
 displayKdqol();
@@ -127,21 +119,31 @@ const KDQOLFactory = (name, dueDate) => ({
 
   addKdqolToDOM() {
     const kdqolList = newTaskDom.newKdqolItems;
-
     const kdqolItem = document.createElement('li');
     kdqolItem.classList.add('kdqolitems');
+    kdqolItem.setAttribute('data-value', `${newTaskDom.kdqolTitle.value}`);
     kdqolItem.textContent = `${newTaskDom.kdqolTitle.value}`;
     if (`${newTaskDom.kdqolTitle.value}` === '') {
       // eslint-disable-next-line no-useless-return
       return;
     }
     kdqolList.appendChild(kdqolItem);
-    kdqolItem.addEventListener('click', (e) => {
-      removeKdqolTask(e.target.value);
+    const removeButton = document.createElement('button');
+    removeButton.innerText = '-';
+    removeButton.className = 'remove-btn';
+    kdqolItem.appendChild(removeButton);
+    removeButton.addEventListener('click', (e) => {
+      console.log(e.target.value);
       kdqolItem.remove();
+      myKdqolList.splice(kdqolItem, 1);
       console.log(myKdqolList);
     });
   },
+  // look at items in the array, already have this with declared arra
+  // pick item to remove
+  // remove
+  // remove from list
+  // remove from DOM
 });
 
 const newKdqol = KDQOLFactory();
@@ -176,9 +178,14 @@ const PHQ9Factory = (name, dueDate) => ({
       return;
     }
     phq9List.appendChild(phq9item);
-    phq9item.addEventListener('click', (e) => {
-      removePhq9Task(e.target.value);
+    const removeButton = document.createElement('button');
+    removeButton.innerText = '-';
+    removeButton.className = 'remove-btn';
+    phq9item.appendChild(removeButton);
+    removeButton.addEventListener('click', (e) => {
+      console.log(e.target.value);
       phq9item.remove();
+      myPhq9List.splice(phq9item, 1);
       console.log(myPhq9List);
     });
   },
@@ -215,9 +222,14 @@ const assessmentFactory = (name, dueDate) => ({
       return;
     }
     assessmentList.appendChild(assessmentItem);
-    assessmentItem.addEventListener('click', (e) => {
-      removeAssessmentTask(e.target.value);
+    const removeButton = document.createElement('button');
+    removeButton.innerText = '-';
+    removeButton.className = 'remove-btn';
+    assessmentItem.appendChild(removeButton);
+    removeButton.addEventListener('click', (e) => {
+      console.log(e.target.value);
       assessmentItem.remove();
+      myAssessmentList.splice(assessmentItem, 1);
       console.log(myAssessmentList);
     });
   },
@@ -258,9 +270,14 @@ const OtherFactory = (name, dueDate, description) => ({
       return;
     }
     otherList.appendChild(otherItem);
-    otherItem.addEventListener('click', (e) => {
-      removeOtherTask(e.target.value);
+    const removeButton = document.createElement('button');
+    removeButton.innerText = '-';
+    removeButton.className = 'remove-btn';
+    otherItem.appendChild(removeButton);
+    removeButton.addEventListener('click', (e) => {
+      console.log(e.target.value);
       otherItem.remove();
+      myOtherList.splice(otherItem, 1);
       console.log(myOtherList);
     });
   },
@@ -290,12 +307,3 @@ function selectForm() {
 }
 
 selectForm();
-
-let newKdqolList;
-
-function deleteTask(item) {
-  newKdqolList = myKdqolList.filter((e) => e !== item);
-  console.log(newKdqolList);
-}
-
-deleteTask();
