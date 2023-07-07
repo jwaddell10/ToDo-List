@@ -81,13 +81,19 @@ const GoalItemFactory = (title, description, timeFrame) => ({
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 1; i++) {
       const listItem = document.createElement('div');
+      const goalItem = document.getElementsByClassName('goalitems');
       listItem.classList.add('goalitems');
-      listItem.textContent = `${newGoalDom.newTitle.value}`;
+      listItem.textContent = `${newGoalDom.newTitle.value} ${newGoalDom.newDescription.value}`;
       if (`${newGoalDom.newTitle.value}` === '' || `${newGoalDom.newDescription.value}` === '') {
         // eslint-disable-next-line no-useless-return
         return;
       }
       myList.appendChild(listItem);
+      goalItem.addEventListener('click', () => {
+        goalItem.remove();
+        myGoalToDoList.splice(listItem, 2);
+        console.log(myGoalToDoList);
+      });
     }
   },
 });
@@ -128,11 +134,7 @@ const KDQOLFactory = (name, dueDate) => ({
       return;
     }
     kdqolList.appendChild(kdqolItem);
-    const removeButton = document.createElement('button');
-    removeButton.innerText = '-';
-    removeButton.className = 'remove-btn';
-    kdqolItem.appendChild(removeButton);
-    removeButton.addEventListener('click', (e) => {
+    kdqolItem.addEventListener('click', (e) => {
       console.log(e.target.value);
       kdqolItem.remove();
       myKdqolList.splice(kdqolItem, 1);
@@ -178,11 +180,7 @@ const PHQ9Factory = (name, dueDate) => ({
       return;
     }
     phq9List.appendChild(phq9item);
-    const removeButton = document.createElement('button');
-    removeButton.innerText = '-';
-    removeButton.className = 'remove-btn';
-    phq9item.appendChild(removeButton);
-    removeButton.addEventListener('click', (e) => {
+    phq9item.addEventListener('click', (e) => {
       console.log(e.target.value);
       phq9item.remove();
       myPhq9List.splice(phq9item, 1);
@@ -222,11 +220,7 @@ const assessmentFactory = (name, dueDate) => ({
       return;
     }
     assessmentList.appendChild(assessmentItem);
-    const removeButton = document.createElement('button');
-    removeButton.innerText = '-';
-    removeButton.className = 'remove-btn';
-    assessmentItem.appendChild(removeButton);
-    removeButton.addEventListener('click', (e) => {
+    assessmentItem.addEventListener('click', (e) => {
       console.log(e.target.value);
       assessmentItem.remove();
       myAssessmentList.splice(assessmentItem, 1);
@@ -264,20 +258,16 @@ const OtherFactory = (name, dueDate, description) => ({
 
     const otherItem = document.createElement('li');
     otherItem.classList.add('otheritems');
-    otherItem.textContent = `${newTaskDom.otherTitle.value}`;
+    otherItem.textContent = `${newTaskDom.otherTitle.value} ${newTaskDom.otherDescription.value}`;
     if (`${newTaskDom.otherTitle.value}` === '' || `${newTaskDom.otherDescription.value}` === '') {
       // eslint-disable-next-line no-useless-return
       return;
     }
     otherList.appendChild(otherItem);
-    const removeButton = document.createElement('button');
-    removeButton.innerText = '-';
-    removeButton.className = 'remove-btn';
-    otherItem.appendChild(removeButton);
-    removeButton.addEventListener('click', (e) => {
+    otherItem.addEventListener('click', (e) => {
       console.log(e.target.value);
       otherItem.remove();
-      myOtherList.splice(otherItem, 1);
+      myOtherList.splice(otherItem, 2);
       console.log(myOtherList);
     });
   },

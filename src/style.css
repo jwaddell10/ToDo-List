@@ -326,3 +326,16 @@ li:hover {
     background-color: #1f8d4d;
     cursor: pointer;
   }
+  
+.remove-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 1px solid lighten(gray, 24%);
+    height: 48px;
+    padding: 0 24px 0 16px;
+    letter-spacing: .25px;
+    border-radius: 24px;
+    cursor: pointer;
+  }
+ 
