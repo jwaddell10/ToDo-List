@@ -21,7 +21,6 @@ const myKdqolList = [];
 const myPhq9List = [];
 const myAssessmentList = [];
 const myOtherList = [];
-console.log(myGoalToDoList);
 // function to display goal popup form
 // eslint-disable-next-line no-plusplus
 
@@ -92,7 +91,6 @@ const GoalItemFactory = (title, description, timeFrame) => ({
       goalItem.addEventListener('click', () => {
         goalItem.remove();
         myGoalToDoList.splice(listItem, 2);
-        console.log(myGoalToDoList);
       });
     }
   },
@@ -101,13 +99,9 @@ const newItem = GoalItemFactory();
 // event listener to create to do goal items
 
 newGoalDom.goalAddToListBtn.addEventListener('click', () => {
-  console.log('is this running?');
   newItem.addToList();
   newItem.addToDOM();
   render();
-  console.log(newItem);
-
-  console.log(myGoalToDoList);
 });
 
 // creates Kdqol tasks
@@ -120,7 +114,6 @@ const KDQOLFactory = (name, dueDate) => ({
     const a = newTaskDom.kdqolTitle.value;
     const b = newTaskDom.kdqolDueDate.value;
     myKdqolList.push(a, b);
-    console.log(myKdqolList);
   },
 
   addKdqolToDOM() {
@@ -134,11 +127,11 @@ const KDQOLFactory = (name, dueDate) => ({
       return;
     }
     kdqolList.appendChild(kdqolItem);
+
     kdqolItem.addEventListener('click', (e) => {
       console.log(e.target.value);
       kdqolItem.remove();
       myKdqolList.splice(kdqolItem, 1);
-      console.log(myKdqolList);
     });
   },
   // look at items in the array, already have this with declared arra
@@ -147,15 +140,25 @@ const KDQOLFactory = (name, dueDate) => ({
   // remove from list
   // remove from DOM
 });
-
 const newKdqol = KDQOLFactory();
 
 newTaskDom.kdqolAddBtn.addEventListener('click', () => {
   newKdqol.addToKdqolList();
   newKdqol.addKdqolToDOM();
-  console.log('is this running?');
-});
+  // eslint-disable-next-line camelcase
+  const myKdqolList_serialized = JSON.stringify(myKdqolList);
+  console.log(myKdqolList_serialized);
 
+  localStorage.setItem('myKdqolList', myKdqolList);
+  console.log(localStorage);
+});
+// when DOM Content loaded, get localStorage MyKDQOL list, then print it to DOM
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log(localStorage.myKdqolList);
+  console.log(localStorage.getItem('myKdqolList', myKdqolList));
+});
+// eslint-disable-next-line camelcase
 // creates phq9 tasks
 
 const PHQ9Factory = (name, dueDate) => ({
