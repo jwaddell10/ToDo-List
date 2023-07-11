@@ -128,11 +128,23 @@ const KDQOLFactory = (name, dueDate) => ({
     }
     kdqolList.appendChild(kdqolItem);
 
-    kdqolItem.addEventListener('click', (e) => {
-      console.log(e.target.value);
-      kdqolItem.remove();
-      myKdqolList.splice(kdqolItem, 1);
+    kdqolItem.addEventListener('click', () => {
+      console.log('does this item click');
+      document.querySelector('#taskitemformpopup').style.display = 'block';
+      document.querySelector('#kdqoltaskformpopup').style.display = 'block'; /* kdqolItem.remove();
+      myKdqolList.splice(kdqolItem, 2); */
     });
+  },
+  addToLocalStorage() {
+    // eslint-disable-next-line camelcase
+    console.log(myKdqolList);
+    // eslint-disable-next-line camelcase
+    const myKdqolList_serialized = JSON.stringify(myKdqolList);
+    console.log(myKdqolList_serialized);
+    const kdqolListData = JSON.parse(localStorage.getItem('mykdqollist'));
+    console.log(kdqolListData);
+    localStorage.setItem('myKdqolList', myKdqolList);
+    console.log(localStorage);
   },
   // look at items in the array, already have this with declared arra
   // pick item to remove
@@ -145,19 +157,10 @@ const newKdqol = KDQOLFactory();
 newTaskDom.kdqolAddBtn.addEventListener('click', () => {
   newKdqol.addToKdqolList();
   newKdqol.addKdqolToDOM();
+  newKdqol.addToLocalStorage();
   // eslint-disable-next-line camelcase
-  const myKdqolList_serialized = JSON.stringify(myKdqolList);
-  console.log(myKdqolList_serialized);
-
-  localStorage.setItem('myKdqolList', myKdqolList);
-  console.log(localStorage);
 });
 // when DOM Content loaded, get localStorage MyKDQOL list, then print it to DOM
-
-document.addEventListener('DOMContentLoaded', () => {
-  console.log(localStorage.myKdqolList);
-  console.log(localStorage.getItem('myKdqolList', myKdqolList));
-});
 // eslint-disable-next-line camelcase
 // creates phq9 tasks
 
