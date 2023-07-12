@@ -105,7 +105,7 @@ newGoalDom.goalAddToListBtn.addEventListener('click', () => {
 });
 
 // creates Kdqol tasks
-
+console.log(myKdqolList);
 const KDQOLFactory = (name, dueDate) => ({
   name,
   dueDate,
@@ -114,6 +114,7 @@ const KDQOLFactory = (name, dueDate) => ({
     const a = newTaskDom.kdqolTitle.value;
     const b = newTaskDom.kdqolDueDate.value;
     myKdqolList.push(a, b);
+    console.log(myKdqolList);
   },
 
   addKdqolToDOM() {
@@ -128,23 +129,23 @@ const KDQOLFactory = (name, dueDate) => ({
     }
     kdqolList.appendChild(kdqolItem);
 
-    kdqolItem.addEventListener('click', () => {
-      console.log('does this item click');
-      document.querySelector('#taskitemformpopup').style.display = 'block';
-      document.querySelector('#kdqoltaskformpopup').style.display = 'block'; /* kdqolItem.remove();
-      myKdqolList.splice(kdqolItem, 2); */
+    kdqolItem.addEventListener('click', (e) => {
+      kdqolItem.remove();
+      console.log(myKdqolList.indexOf(e.target.innerText));
+      const myIndex = myKdqolList.indexOf(e.target.innerText);
+      myKdqolList.splice(myIndex, 2);
+      console.log(myKdqolList);
+      myKdqolList.indexOf(e.target.innerText);
     });
   },
   addToLocalStorage() {
+    // conver the array to string then store it.
+    localStorage.setItem('kdqolList', JSON.stringify(myKdqolList));
+    // render them to screen
+    console.log('kdqollist');
     // eslint-disable-next-line camelcase
     console.log(myKdqolList);
     // eslint-disable-next-line camelcase
-    const myKdqolList_serialized = JSON.stringify(myKdqolList);
-    console.log(myKdqolList_serialized);
-    const kdqolListData = JSON.parse(localStorage.getItem('mykdqollist'));
-    console.log(kdqolListData);
-    localStorage.setItem('myKdqolList', myKdqolList);
-    console.log(localStorage);
   },
   // look at items in the array, already have this with declared arra
   // pick item to remove
@@ -154,6 +155,40 @@ const KDQOLFactory = (name, dueDate) => ({
 });
 const newKdqol = KDQOLFactory();
 
+const kdqolFunction = (() => {
+  function storeKdqol() {
+    const storeThis = localStorage.getItem('kdqolList');
+    const stringReturn = JSON.parse(storeThis);
+    myKdqolList.push(...stringReturn);
+    console.log(myKdqolList);
+  }
+
+  function renderList() {
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < myKdqolList.length; i++) {
+      const storeThis = localStorage.getItem('kdqolList');
+      console.log(storeThis);
+      console.log(myKdqolList.indexOf(e.target.innerText));
+      const stringReturn = JSON.parse(storeThis);
+      console.log(stringReturn);
+      const newKdqolList = newTaskDom.newKdqolItems;
+      const newDiv = document.createElement('li');
+      newDiv.textContent = myKdqolList;
+      newKdqolList.appendChild(newDiv);
+    }
+  }
+  return {
+    storeKdqol,
+    renderList,
+  };
+})();
+
+// loop over items, then append array items to DOM
+// eslint-disable-next-line no-restricted-globals
+addEventListener('DOMContentLoaded', () => {
+  kdqolFunction.storeKdqol();
+  kdqolFunction.renderList();
+});
 newTaskDom.kdqolAddBtn.addEventListener('click', () => {
   newKdqol.addToKdqolList();
   newKdqol.addKdqolToDOM();
